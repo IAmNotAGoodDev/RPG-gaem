@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mini-RPG - Prototype</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Mini-RPG — Prototype jouable</h1>
+    <div id="top-info">Niveau max: 50 · Tour par tour · Vitesse détermine l'ordre</div>
+  </header>
+
+  <main>
+    <section id="left">
+      <div id="player-card" class="card">
+        <h2 id="player-name">Joueur</h2>
+        <div id="player-stats"></div>
+        <div id="player-equipment"></div>
+        <div id="player-xp"></div>
+      </div>
+
+      <div class="card">
+        <h3>Inventaire</h3>
+        <div id="inventory"></div>
+      </div>
+
+      <div class="card">
+        <h3>Arbre de compétences</h3>
+        <button id="open-skills">Ouvrir</button>
+      </div>
+    </section>
+
+    <section id="center">
+      <div id="battle-log" class="card">
+        <h3>Journal de combat</h3>
+        <div id="log"></div>
+      </div>
+
+      <div id="actions" class="card">
+        <h3>Actions</h3>
+        <div class="buttons">
+          <button id="btn-attack">Attaquer</button>
+          <button id="btn-skill">Compétence</button>
+          <button id="btn-defend">Défendre</button>
+          <button id="btn-item">Objet</button>
+          <button id="btn-run">Fuir</button>
+        </div>
+        <div id="skill-select" class="panel hidden"></div>
+      </div>
+    </section>
+
+    <section id="right">
+      <div id="enemy-card" class="card">
+        <h2 id="enemy-name">Aucun ennemi</h2>
+        <div id="enemy-stats"></div>
+      </div>
+
+      <div class="card">
+        <h3>Boutique</h3>
+        <button id="open-shop">Ouvrir boutique</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>Prototype en JavaScript/HTML/CSS — Documentation incluse</div>
+  </footer>
+
+  <script src="game.js"></script>
+</body>
+</html>
+
+<!-- Skill tree modal -->
+<div id="modal-skilltree" class="modal hidden">
+  <div class="modal-inner">
+    <h3>Arbre de compétences</h3>
+    <div id="skill-tree-container" class="skill-tree"></div>
+    <div style="margin-top:10px;"><button id="close-skilltree">Fermer</button></div>
+  </div>
+</div>
+
+<!-- Shop modal -->
+<div id="modal-shop" class="modal hidden">
+  <div class="modal-inner">
+    <h3>Boutique</h3>
+    <div id="shop-list"></div>
+    <div style="margin-top:10px;"><button id="close-shop">Fermer</button></div>
+  </div>
+</div>
+
+<!-- Combat end modal -->
+<div id="modal-combat-end" class="modal hidden">
+  <div class="modal-inner">
+    <h3>Fin de combat</h3>
+    <div id="combat-results"></div>
+    <div style="margin-top:10px;"><button id="btn-continue">Continuer</button></div>
+  </div>
+</div>
